@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import axios from '../../axios';
 import Title from '../../components/Title';
+import config from '../../config';
 
 const ShirtsWrapper = styled.main`
   padding-bottom: 5rem;
@@ -69,6 +70,7 @@ const Shirts = () => {
     console.log(
       'together: ' + window.location.hostname + '/api/products/contentful/shirt'
     );
+    console.log('from config: ' + config[process.env.NODE_ENV].endpoint);
     setLoading(true);
     axios
       .get('/api/products/contentful/shirt')
