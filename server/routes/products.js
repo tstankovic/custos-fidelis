@@ -5,6 +5,7 @@ const Product = require('../model/Product');
 
 const SPACE = process.env.SPACE;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+console.log(ACCESS_TOKEN);
 
 var client = contentful.createClient({
   space: SPACE,
