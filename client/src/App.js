@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { AppProvider } from './context';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Shirts from './pages/Products/Shirts';
+import SingleProduct from './pages/Products/SingleProduct';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+
+const App = () => (
+  <AppProvider>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path='/' exact component={Home} />
+        <Route path='/shop' exact component={Shop} />
+        <Route path='/products/shirts' exact component={Shirts} />
+        <Route path='/product/:id' exact component={SingleProduct} />
+        <Route path='/cart' exact component={Cart} />
+        <Route path='/checkout' exact component={Checkout} />
+        <Redirect to='/' />
+      </Switch>
+      <Footer />
+    </Router>
+  </AppProvider>
+);
 
 export default App;
