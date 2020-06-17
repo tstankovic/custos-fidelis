@@ -8,7 +8,7 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 var client = contentful.createClient({
   space: SPACE,
-  accessToken: ACCESS_TOKEN,
+  accessToken: 'eo65yikLqwF48Q0II_3NhgJUX5y9Tys198ey6q9bi5Q',
 });
 
 router.get('/contentful/:type', (req, res, next) => {
