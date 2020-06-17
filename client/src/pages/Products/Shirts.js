@@ -73,9 +73,7 @@ const Shirts = () => {
 
     setLoading(true);
     axios
-      .get(
-        config[process.env.NODE_ENV].endpoint + '/api/products/contentful/shirt'
-      )
+      .get('/api/products/contentful/shirt')
       .then((res) => {
         const { items } = res.data;
         const shirts = [];
