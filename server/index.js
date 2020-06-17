@@ -6,7 +6,6 @@ const cors = require('cors');
 
 const uri = process.env.MONGODB_URI;
 const port = process.env.PORT || 5000;
-console.log(uri);
 
 const ordersRoutes = require('./routes/orders');
 const productsRoutes = require('./routes/products');

@@ -5,11 +5,10 @@ const Product = require('../model/Product');
 
 const SPACE = process.env.SPACE;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-console.log(ACCESS_TOKEN);
 
 var client = contentful.createClient({
   space: SPACE,
-  accessToken: 'eo65yikLqwF48Q0II_3NhgJUX5y9Tys198ey6q9bi5Q',
+  accessToken: ACCESS_TOKEN,
 });
 
 router.get('/contentful/:type', (req, res, next) => {
