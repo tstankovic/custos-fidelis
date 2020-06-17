@@ -24,6 +24,10 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 app.use('/api/orders', ordersRoutes);
 app.use('/api/products', productsRoutes);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
 app.use((error, req, res, next) => {
   console.log(error.message);
   const { code, message } = error;
