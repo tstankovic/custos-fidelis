@@ -65,6 +65,10 @@ const Shirts = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    console.log(window.location.hostname);
+    console.log(
+      'together: ' + window.location.hostname + '/api/products/contentful/shirt'
+    );
     setLoading(true);
     axios
       .get('/api/products/contentful/shirt')
