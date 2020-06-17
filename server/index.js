@@ -16,7 +16,6 @@ mongoose.connect(uri, {
 });
 
 app.use(cors());
-app.get('/*', (req, res) => res.send());
 
 app.use(express.json());
 
