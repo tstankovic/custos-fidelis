@@ -16,6 +16,7 @@ mongoose.connect(uri, {
 });
 
 app.use(cors());
+app.get('/*', (req, res) => res.send());
 
 app.use(express.json());
 
@@ -25,7 +26,7 @@ app.use('/api/orders', ordersRoutes);
 app.use('/api/products', productsRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
 app.use((error, req, res, next) => {
