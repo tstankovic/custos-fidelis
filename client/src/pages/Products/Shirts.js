@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
 
-import axios from '../../axios';
 import Title from '../../components/Title';
 import config from '../../config';
 
@@ -66,14 +66,16 @@ const Shirts = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log(window.location.hostname);
-    console.log(
-      'together: ' + window.location.hostname + '/api/products/contentful/shirt'
-    );
-    console.log('from config: ' + config[process.env.NODE_ENV].endpoint);
+    // console.log(window.location.hostname);
+    // console.log(
+    //   'together: ' + window.location.hostname + '/api/products/contentful/shirt'
+    // );
+
     setLoading(true);
     axios
-      .get('/api/products/contentful/shirt')
+      .get(
+        config[process.env.NODE_ENV].endpoint + '/api/products/contentful/shirt'
+      )
       .then((res) => {
         const { items } = res.data;
         const shirts = [];
