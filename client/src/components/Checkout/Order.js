@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-
-import axios from '../../axios';
 
 const OrderWrapper = styled.div`
   flex: 3;

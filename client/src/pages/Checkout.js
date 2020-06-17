@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import { AppContext } from '../context';
-import axios from '../axios';
 import Title from '../components/Title';
 import Order from '../components/Checkout/Order';
 

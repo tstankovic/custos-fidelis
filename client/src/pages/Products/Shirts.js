@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import Title from '../../components/Title';
-import config from '../../config';
 
 const ShirtsWrapper = styled.main`
   padding-bottom: 5rem;

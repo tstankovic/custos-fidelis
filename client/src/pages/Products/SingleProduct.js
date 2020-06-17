@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import { AppContext } from '../../context';
-import axios from '../../axios';
 import Button from '../../components/Button';
 import Message from '../../components/Message';
 
