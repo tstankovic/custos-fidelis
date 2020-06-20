@@ -106,10 +106,10 @@ const Header = () => {
                 <Link to='/shop'>Продавница</Link>
               </li>
               <li>
-                <Link to='/'>Прича</Link>
+                <Link to='/story'>Прича</Link>
               </li>
               <li>
-                <Link to='/'>О нама</Link>
+                <Link to='/about'>О нама</Link>
               </li>
             </ul>
           </nav>

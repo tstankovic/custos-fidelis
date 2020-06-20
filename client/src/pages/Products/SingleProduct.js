@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -16,6 +16,35 @@ const SingleProductWrapper = styled.main`
 
   .product-images {
     flex: 2;
+  }
+
+  .img-zoom-container {
+    position: relative;
+  }
+
+  .img-zoom-container:hover {
+    .img-zoom-result,
+    .img-zoom-lens {
+      display: block;
+    }
+  }
+
+  .img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    width: 60px;
+    height: 60px;
+    display: none;
+  }
+
+  .img-zoom-result {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 350px;
+    height: 350px;
+    border: 1px solid #d4d4d4;
+    display: none;
   }
 
   .product-info {
@@ -101,6 +130,10 @@ const SingleProduct = (props) => {
 
   const { addToCart } = useContext(AppContext);
 
+  const imgEl = useRef();
+  const resEl = useRef();
+  const lensEl = useRef();
+
   useEffect(() => {
     const { id } = props.match.params;
     setLoading(true);
@@ -150,6 +183,74 @@ const SingleProduct = (props) => {
     addToCart(...args);
   };
 
+  let moveLens;
+  const imageZoom = () => {
+    let img, result, lens, cx, cy;
+    img = imgEl.current;
+    result = resEl.current;
+    lens = lensEl.current;
+    cx = result.offsetWidth / lens.offsetWidth;
+    cy = result.offsetHeight / lens.offsetHeight;
+    result.style.backgroundColor = '#fff';
+    result.style.backgroundImage = `url("${img.src}")`;
+    result.style.backgroundSize = `${img.width * cx}px ${img.height * cy}px`;
+
+    moveLens = (e) => {
+      e.preventDefault();
+      let pos, x, y;
+      pos = getCursorPos(e);
+      x = pos.x - lens.offsetWidth / 2;
+      y = pos.y - lens.offsetHeight / 2;
+      if (x > img.width - lens.offsetWidth) {
+        x = img.width - lens.offsetWidth;
+      }
+      if (x < 0) {
+        x = 0;
+      }
+      if (y > img.height - lens.offsetHeight) {
+        y = img.height - lens.offsetHeight;
+      }
+      if (y < 0) {
+        y = 0;
+      }
+      lens.style.top = y + 'px';
+      lens.style.left = x + 'px';
+      result.style.backgroundPosition = `-${x * cx}px -${y * cy}px`;
+    };
+
+    lens.addEventListener('mousemove', moveLens);
+    img.addEventListener('mousemove', moveLens);
+    lens.addEventListener('touchmove', moveLens);
+    img.addEventListener('touchmove', moveLens);
+
+    function getCursorPos(e) {
+      let a,
+        x = 0,
+        y = 0;
+      e = e || window.event;
+      a = img.getBoundingClientRect();
+      x = e.pageX - a.left;
+      y = e.pageY - a.top;
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      return { x, y };
+    }
+  };
+
+  const handleMouseEnter = () => {
+    imageZoom();
+  };
+
+  const handleMouseLeave = () => {
+    let img, lens;
+    img = imgEl.current;
+    lens = lensEl.current;
+    lens.removeEventListener('mousemove', moveLens);
+    img.removeEventListener('mouseMove', moveLens);
+    lens.removeEventListener('touchmove', moveLens);
+    img.removeEventListener('touchmove', moveLens);
+  };
+
   if (loading) {
     return (
       <div className='loader-wrapper'>
@@ -161,18 +262,22 @@ const SingleProduct = (props) => {
   return (
     <SingleProductWrapper>
       <div className='container'>
-        <Message visible={messageVisible} />
+        <Message visible={messageVisible} style='success' />
         <div className='product-wrapper'>
           <div className='product-images'>
-            <div className='current-image'>
+            <div className='img-zoom-container' onMouseLeave={handleMouseLeave}>
+              <div ref={lensEl} className='img-zoom-lens'></div>
               {product.images && (
                 <img
                   width='100%'
                   height='100%'
                   src={currentImage}
                   alt='current'
+                  ref={imgEl}
+                  onMouseEnter={handleMouseEnter}
                 />
               )}
+              <div id='result' className='img-zoom-result' ref={resEl}></div>
             </div>
             <div className='all-images'>
               {product.images &&

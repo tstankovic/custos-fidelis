@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { FaSpinner } from 'react-icons/fa';
 
 const OrderWrapper = styled.div`
   flex: 3;
@@ -99,6 +100,7 @@ const OrderWrapper = styled.div`
 
 const Order = ({ cart, handleOrder }) => {
   const [recaptcha, setRecaptcha] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const cartTotal = cart.reduce((acc, cur) => {
     acc += cur.product.price * cur.qty;
@@ -118,6 +120,11 @@ const Order = ({ cart, handleOrder }) => {
     } else {
       setRecaptcha(false);
     }
+  };
+
+  const handleClick = () => {
+    setLoading(true);
+    handleOrder(setLoading);
   };
 
   return (
@@ -169,8 +176,15 @@ const Order = ({ cart, handleOrder }) => {
         onChange={onChange}
       />
 
-      <button className='order-btn' onClick={handleOrder} disabled={!recaptcha}>
-        Наручите
+      <button
+        className='order-btn'
+        onClick={handleClick}
+        disabled={!recaptcha || loading}
+      >
+        <div style={{ display: loading ? 'block' : 'none' }}>
+          <FaSpinner />
+        </div>
+        <span style={{ display: loading ? 'none' : 'block' }}>Наручите</span>
       </button>
     </OrderWrapper>
   );

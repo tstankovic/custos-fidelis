@@ -6,6 +6,7 @@ const MessageWrapper = styled.div`
   width: 100%;
   height: 4rem;
   background-color: #3cb371;
+  border-left: 0.5rem solid darkgreen;
   color: #fafafa;
   margin-top: 1.5rem;
   display: flex;
@@ -26,7 +27,7 @@ const MessageWrapper = styled.div`
   }
 `;
 
-const Message = ({ visible }) => (
+const Message = ({ visible, style }) => (
   <MessageWrapper visible={visible}>
     <p>Производ успешно додат у корпу</p>
     <Link to='/cart'>Преглед корпе →</Link>

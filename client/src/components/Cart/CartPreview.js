@@ -34,8 +34,17 @@ const CartPreviewWrapper = styled.div`
     width: 40px;
   }
 
-  .cart-item-info p:first-child {
-    padding-bottom: 0.2rem;
+  .cart-item-info {
+    width: 100%;
+    padding: 0 1rem;
+
+    p {
+      text-align: left;
+    }
+
+    p:first-child {
+      padding-bottom: 0.2rem;
+    }
   }
 
   .cart-total {

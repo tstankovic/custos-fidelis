@@ -15,6 +15,8 @@ import Shirts from './pages/Products/Shirts';
 import SingleProduct from './pages/Products/SingleProduct';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Story from './pages/Story';
+import About from './pages/About';
 
 const App = () => (
   <AppProvider>
@@ -27,6 +29,8 @@ const App = () => (
         <Route path='/product/:id' exact component={SingleProduct} />
         <Route path='/cart' exact component={Cart} />
         <Route path='/checkout' exact component={Checkout} />
+        <Route path='/story' exact component={Story} />
+        <Route path='/about' exact component={About} />
         <Redirect to='/' />
       </Switch>
       <Footer />

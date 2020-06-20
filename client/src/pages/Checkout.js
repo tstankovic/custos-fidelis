@@ -114,10 +114,12 @@ const Checkout = () => {
     return errors;
   };
 
-  const handleOrder = async (e) => {
+  const handleOrder = async (setLoading) => {
     const errors = validate();
     if (Object.keys(errors).length) {
-      return setErrors(errors);
+      setErrors(errors);
+      setLoading(false);
+      return;
     }
 
     const orderData = {
@@ -142,10 +144,9 @@ const Checkout = () => {
         })),
       ],
     };
-    console.log(orderData);
-    const response = await axios.post('/api/orders', orderData);
-    console.log(response);
+    await axios.post('/api/orders', orderData);
     alert('Поруџбина успешно прослеђена');
+    setLoading(false);
   };
 
   const handleFocus = (inputName) => {
