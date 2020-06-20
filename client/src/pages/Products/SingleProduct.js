@@ -22,13 +22,6 @@ const SingleProductWrapper = styled.main`
     position: relative;
   }
 
-  .img-zoom-container:hover {
-    .img-zoom-result,
-    .img-zoom-lens {
-      display: block;
-    }
-  }
-
   .img-zoom-lens {
     position: absolute;
     border: 1px solid #d4d4d4;
@@ -189,6 +182,8 @@ const SingleProduct = (props) => {
     img = imgEl.current;
     result = resEl.current;
     lens = lensEl.current;
+    result.style.display = 'block';
+    lens.style.display = 'block';
     cx = result.offsetWidth / lens.offsetWidth;
     cy = result.offsetHeight / lens.offsetHeight;
     result.style.backgroundColor = '#fff';
@@ -242,13 +237,16 @@ const SingleProduct = (props) => {
   };
 
   const handleMouseLeave = () => {
-    let img, lens;
+    let img, lens, result;
     img = imgEl.current;
+    result = resEl.current;
     lens = lensEl.current;
     lens.removeEventListener('mousemove', moveLens);
     img.removeEventListener('mouseMove', moveLens);
     lens.removeEventListener('touchmove', moveLens);
     img.removeEventListener('touchmove', moveLens);
+    lens.style.display = 'none';
+    result.style.display = 'none';
   };
 
   if (loading) {

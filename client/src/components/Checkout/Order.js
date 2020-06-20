@@ -112,6 +112,7 @@ const Order = ({ cart, handleOrder }) => {
       const response = await axios.post('/api/orders/recaptcha', {
         response: value,
       });
+      console.log(response.data);
       if (response.statusText == 'OK') {
         setRecaptcha(true);
       } else {
