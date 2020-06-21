@@ -4,8 +4,7 @@ const nodemailer = require('nodemailer');
 
 const Order = require('../model/Order');
 
-const PASS = process.env.PASS;
-const SECRET = process.env.SECRET;
+const { PASS, SECRET_KEY } = process.env;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -61,19 +60,15 @@ router.post('/', async (req, res, next) => {
 });
 
 router.post('/recaptcha', (req, res, next) => {
-  const { response } = req.body;
-  const body = { secret: SECRET, response };
-  fetch('https://www.google.com/recaptcha/api/siteverify', {
+  const VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+  return fetch(VERIFY_URL, {
     method: 'POST',
-    body: JSON.stringify(body),
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `secret=${SECRET_KEY}&response=${req.body.response}`,
   })
-    .then((resp) => {
-      return resp.json();
-    })
+    .then((response) => response.json())
     .then((data) => {
-      // TODO error fix
-      console.log('data -----', data);
+      // console.log(data);
       res.status(200).json(data);
     })
     .catch(next);
