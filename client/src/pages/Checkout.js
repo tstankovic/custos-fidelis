@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import { AppContext } from '../context';
-import Title from '../components/Title';
+import Title from '../components/Global/Title';
 import Order from '../components/Checkout/Order';
 
 const CheckoutWrapper = styled.main`

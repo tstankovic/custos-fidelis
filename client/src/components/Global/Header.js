@@ -2,9 +2,9 @@ import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { AppContext } from '../context';
-import CartPreview from './Cart/CartPreview';
-import CartDetails from './Cart/CartDetails';
+import { AppContext } from '../../context';
+import CartPreview from '../Cart/CartPreview';
+import CartDetails from '../Cart/CartDetails';
 
 const HeaderWrapper = styled.header`
   width: 100%;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import HeroImg from '../images/hero-main.jpg';
 import HeroNew from '../images/hero-new.jpg';
-import PrincipDuksImg from '../images/princip-duks.png';
 import PrincipMajicaImg from '../images/princip-majica.jpg';
 import CrniDuksImg from '../images/crni-duks-sunce.jpg';
 import ModelLogoImg from '../images/Model-logo-1.jpg';
@@ -14,25 +13,27 @@ import FbIconDark from '../images/fb-icon-dark.png';
 import InstaIconDark from '../images/insta-icon-dark.png';
 import YtIconDark from '../images/yt-icon-dark.png';
 
+import ImageSlider from '../components/Global/ImageSlider';
+
 const HomeWrapper = styled.main`
   .hero {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(${HeroImg});
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-  }
 
-  .hero div {
-    width: 300px;
-    height: 120px;
-    position: absolute;
-    top: 225px;
-    left: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    div {
+      width: 300px;
+      height: 120px;
+      position: absolute;
+      top: 225px;
+      left: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .shop-btn {
@@ -49,25 +50,8 @@ const HomeWrapper = styled.main`
     letter-spacing: 2px;
   }
 
-  .imgs-container {
-    padding: 3rem 0;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .img {
-    height: 300px;
-    width: 300px;
-    border: 1px solid #aaa;
-  }
-
-  .img img {
-    width: 100%;
-    height: 100%;
-  }
-
   .hero-new {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(${HeroNew});
     background-position: center;
     background-size: cover;
@@ -77,7 +61,7 @@ const HomeWrapper = styled.main`
   }
 
   .hero-slider {
-    height: 100vh;
+    min-height: 100vh;
     background-color: lightsalmon;
     position: relative;
   }
@@ -108,41 +92,41 @@ const HomeWrapper = styled.main`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-  }
 
-  .hero-slider-img-content h1 {
-    color: #fff;
-    font-size: 40px;
-  }
+    h1 {
+      color: #fff;
+      font-size: 40px;
+    }
 
-  .hero-slider-img-content button {
-    width: 200px;
-    height: 50px;
-    background: none;
-    border: none;
-    outline: none;
-    background-color: firebrick;
-    color: white;
-    font-size: 18px;
-    border-radius: 2px;
-    cursor: pointer;
+    button {
+      width: 200px;
+      height: 50px;
+      background: none;
+      border: none;
+      outline: none;
+      background-color: firebrick;
+      color: white;
+      font-size: 18px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
   }
 
   .icons-wrapper {
     padding: 5rem 0;
     display: flex;
     justify-content: space-around;
+
+    a:hover .img-dark {
+      display: inline;
+    }
+
+    a:hover .img-main {
+      display: none;
+    }
   }
 
   .img-dark {
-    display: none;
-  }
-
-  .icons-wrapper a:hover .img-dark {
-    display: inline;
-  }
-
-  .icons-wrapper a:hover .img-main {
     display: none;
   }
 `;
@@ -167,35 +151,11 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className='container'>
-          <div className='imgs-container'>
-            <div className='img'>
-              <img src={PrincipDuksImg} alt='product' />
-            </div>
-            <div className='img'>
-              <img src={PrincipDuksImg} alt='product' />
-            </div>
-            <div className='img'>
-              <img src={PrincipDuksImg} alt='product' />
-            </div>
-          </div>
-        </div>
+        <ImageSlider />
       </section>
       <section className='hero-new'></section>
       <section>
-        <div className='container'>
-          <div className='imgs-container'>
-            <div className='img'>
-              <img src={PrincipMajicaImg} alt='product' />
-            </div>
-            <div className='img'>
-              <img src={PrincipMajicaImg} alt='product' />
-            </div>
-            <div className='img'>
-              <img src={PrincipMajicaImg} alt='product' />
-            </div>
-          </div>
-        </div>
+        <ImageSlider />
       </section>
       <section className='hero-slider'>
         <div

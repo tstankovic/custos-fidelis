@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import Title from '../../components/Title';
+import Title from '../../components/Global/Title';
 
 const ShirtsWrapper = styled.main`
   padding-bottom: 5rem;
@@ -69,7 +69,7 @@ const Shirts = () => {
     axios
       .get('/api/products/contentful/shirt')
       .then((res) => {
-        const { items } = res.data;
+        const items = res.data;
         const shirts = [];
         for (const item of items) {
           const shirt = {};

@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 
 import { AppProvider } from './context';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Global/Header';
+import Footer from './components//Global/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Shirts from './pages/Products/Shirts';

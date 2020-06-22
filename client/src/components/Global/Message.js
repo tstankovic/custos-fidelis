@@ -27,7 +27,7 @@ const MessageWrapper = styled.div`
   }
 `;
 
-const Message = ({ visible, style }) => (
+const Message = ({ visible, msgStyle }) => (
   <MessageWrapper visible={visible}>
     <p>Производ успешно додат у корпу</p>
     <Link to='/cart'>Преглед корпе →</Link>

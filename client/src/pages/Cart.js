@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { AppContext } from '../context';
-import Title from '../components/Title';
+import Title from '../components/Global/Title';
 import CartTable from '../components/Cart/CartTable';
 import CartSummary from '../components/Cart/CartSummary';
 

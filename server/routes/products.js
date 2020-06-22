@@ -12,12 +12,16 @@ var client = contentful.createClient({
 });
 
 router.get('/contentful/:type', (req, res, next) => {
-  client.getEntries().then((entries) => {
-    const { items } = entries;
-    res.status(200).json({
-      items: items.filter((item) => item.fields.type === req.params.type),
+  const { type } = req.params;
+  client
+    .getEntries({
+      content_type: 'tshirt',
+      'fields.type': type,
+    })
+    .then((entries) => {
+      const { items } = entries;
+      res.status(200).json(items);
     });
-  });
 });
 
 router.get('/contentful/single/:id', (req, res, next) => {
@@ -26,6 +30,21 @@ router.get('/contentful/single/:id', (req, res, next) => {
   });
 });
 
+router.get('/contentful/fixed/:type/:amount', (req, res, next) => {
+  const { type, amount } = req.params;
+  client
+    .getEntries({
+      limit: amount,
+      content_type: 'tshirt',
+      'fields.type': type,
+    })
+    .then((entries) => {
+      res.status(200).json(entries);
+    })
+    .catch(next);
+});
+
+// UNUSED
 router.get('/shirts', async (req, res, next) => {
   try {
     const products = await Product.find({ type: 'shirt' });

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import { AppContext } from '../../context';
-import Button from '../../components/Button';
-import Message from '../../components/Message';
+import Button from '../../components/Global/Button';
+import Message from '../../components/Global/Message';
 
 const SingleProductWrapper = styled.main`
   min-height: 120vh;
@@ -260,7 +260,7 @@ const SingleProduct = (props) => {
   return (
     <SingleProductWrapper>
       <div className='container'>
-        <Message visible={messageVisible} style='success' />
+        <Message visible={messageVisible} msgStyle='success' />
         <div className='product-wrapper'>
           <div className='product-images'>
             <div className='img-zoom-container' onMouseLeave={handleMouseLeave}>
