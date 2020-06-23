@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import HeroImg from '../images/hero-main.jpg';
 import HeroNew from '../images/hero-new.jpg';
-import PrincipMajicaImg from '../images/princip-majica.jpg';
 import CrniDuksImg from '../images/crni-duks-sunce.jpg';
 import ModelLogoImg from '../images/Model-logo-1.jpg';
 import FbIcon from '../images/fb-icon.png';

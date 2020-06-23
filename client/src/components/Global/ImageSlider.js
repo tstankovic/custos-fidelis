@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FcPrevious, FcNext } from 'react-icons/fc';
-
-// import PrincipDuksImg from '../../images/princip-duks.png';
 
 const ImageSliderWrapper = styled.div`
   width: 1100px;
@@ -112,39 +111,59 @@ const ImageSlider = () => {
         onTransitionEnd={handleTransitionEnd}
       >
         {shirts.length && (
-          <div className='image'>
-            <img
-              width='300px'
-              height='300px'
-              src={shirts[shirts.length - 2].url}
-              alt='shirt'
-            />
-          </div>
+          <Link to={`/product/${shirts[shirts.length - 2].id}`}>
+            <div className='image'>
+              <img
+                width='300px'
+                height='300px'
+                src={shirts[shirts.length - 2].url}
+                alt='shirt'
+              />
+            </div>
+          </Link>
         )}
         {shirts.length && (
-          <div className='image'>
-            <img
-              width='300px'
-              height='300px'
-              src={shirts[shirts.length - 1].url}
-              alt='shirt'
-            />
-          </div>
+          <Link to={`/product/${shirts[shirts.length - 1].id}`}>
+            <div className='image'>
+              <img
+                width='300px'
+                height='300px'
+                src={shirts[shirts.length - 1].url}
+                alt='shirt'
+              />
+            </div>
+          </Link>
         )}
         {shirts.map((shirt, i) => (
-          <div className='image' key={i}>
-            <img width='300px' height='300px' src={shirt.url} alt='shirt' />
-          </div>
+          <Link key={i} to={`/product/${shirt.id}`}>
+            <div className='image'>
+              <img width='300px' height='300px' src={shirt.url} alt='shirt' />
+            </div>
+          </Link>
         ))}
         {shirts.length && (
-          <div className='image'>
-            <img width='300px' height='300px' src={shirts[0].url} alt='shirt' />
-          </div>
+          <Link to={`/product/${shirts[0].id}`}>
+            <div className='image'>
+              <img
+                width='300px'
+                height='300px'
+                src={shirts[0].url}
+                alt='shirt'
+              />
+            </div>
+          </Link>
         )}
         {shirts.length && (
-          <div className='image'>
-            <img width='300px' height='300px' src={shirts[1].url} alt='shirt' />
-          </div>
+          <Link to={`/product/${shirts[1].id}`}>
+            <div className='image'>
+              <img
+                width='300px'
+                height='300px'
+                src={shirts[1].url}
+                alt='shirt'
+              />
+            </div>
+          </Link>
         )}
       </div>
       <div className='next'>

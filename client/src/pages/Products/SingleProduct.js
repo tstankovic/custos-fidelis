@@ -34,8 +34,8 @@ const SingleProductWrapper = styled.main`
     position: absolute;
     top: 0;
     left: 105%;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     border: 1px solid #d4d4d4;
     display: none;
   }
