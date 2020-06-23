@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const AppContext = React.createContext();
 
 const AppProvider = (props) => {
-  const [cart, setCart] = useState([]); // [{id: productId, size: S, qty: 2}]
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const existingCart = JSON.parse(localStorage.getItem('cart_items'));

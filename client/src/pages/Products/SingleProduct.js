@@ -113,6 +113,14 @@ const SingleProductWrapper = styled.main`
   }
 `;
 
+const scrollToTop = () => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+};
+
 const SingleProduct = (props) => {
   const [product, setProduct] = useState({});
   const [currentImage, setCurrentImage] = useState('');
@@ -126,6 +134,8 @@ const SingleProduct = (props) => {
   const imgEl = useRef();
   const resEl = useRef();
   const lensEl = useRef();
+
+  useEffect(scrollToTop, []);
 
   useEffect(() => {
     const { id } = props.match.params;
@@ -165,13 +175,6 @@ const SingleProduct = (props) => {
     setMessageVisible(true);
     setSize(false);
     setQty(1);
-    const scrollToTop = () => {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / 8);
-      }
-    };
     scrollToTop();
     addToCart(...args);
   };
