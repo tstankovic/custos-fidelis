@@ -5,14 +5,16 @@ import styled from 'styled-components';
 const MessageWrapper = styled.div`
   width: 100%;
   height: 4rem;
-  background-color: #3cb371;
-  border-left: 0.5rem solid darkgreen;
+  background-color: ${({ msgStyle }) =>
+    msgStyle === 'success' ? '#3cb371' : '#33A1DE'};
+  border-left: 0.5rem solid
+    ${({ msgStyle }) => (msgStyle === 'success' ? 'darkgreen' : 'darkblue')};
   color: #fafafa;
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  display: ${(props) => (props.visible ? 'flex' : 'none')};
+  justify-content: ${({ cart }) => (cart ? 'space-between' : 'flex-start')};
+  display: ${({ visible }) => (visible ? 'flex' : 'none')};
 
   p {
     padding-left: 1.5rem;
@@ -27,10 +29,10 @@ const MessageWrapper = styled.div`
   }
 `;
 
-const Message = ({ visible, msgStyle }) => (
-  <MessageWrapper visible={visible}>
-    <p>Производ успешно додат у корпу</p>
-    <Link to='/cart'>Преглед корпе →</Link>
+const Message = ({ visible, msgStyle, text, cart }) => (
+  <MessageWrapper visible={visible} msgStyle={msgStyle} cart={cart}>
+    <p>{text}</p>
+    {cart && <Link to='/cart'>Преглед корпе →</Link>}
   </MessageWrapper>
 );
 

@@ -263,7 +263,12 @@ const SingleProduct = (props) => {
   return (
     <SingleProductWrapper>
       <div className='container'>
-        <Message visible={messageVisible} msgStyle='success' />
+        <Message
+          visible={messageVisible}
+          msgStyle='success'
+          text='Производ успешно додат у корпу'
+          cart
+        />
         <div className='product-wrapper'>
           <div className='product-images'>
             <div className='img-zoom-container' onMouseLeave={handleMouseLeave}>

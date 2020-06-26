@@ -76,12 +76,21 @@ const AppProvider = (props) => {
         )
     );
     setCart(updatedCart);
-    localStorage.setItem('cart_items', JSON.stringify(updatedCart));
+    if (updatedCart.length) {
+      localStorage.setItem('cart_items', JSON.stringify(updatedCart));
+    } else {
+      localStorage.removeItem('cart_items');
+    }
+  };
+
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem('cart_items');
   };
 
   return (
     <AppContext.Provider
-      value={{ cart, addToCart, increment, decrement, remove }}
+      value={{ cart, addToCart, increment, decrement, remove, clearCart }}
     >
       {props.children}
     </AppContext.Provider>
