@@ -68,29 +68,29 @@ const CartSummary = ({ cart }) => {
 
   return (
     <CartSummaryWrapper>
-      <h2>Укупна вредност корпе</h2>
+      <h2>Ukupna vrednost korpe</h2>
       <table>
         <tbody>
           <tr>
             <th>
-              <p>Укупно</p>
+              <p>Ukupno</p>
             </th>
             <td>
-              <p>{cartTotal.toFixed(2)} рсд</p>
+              <p>{cartTotal.toFixed(2)} rsd</p>
             </td>
           </tr>
           <tr>
             <th>
-              <p>Укупно</p>
+              <p>Ukupno</p>
             </th>
             <td>
-              <p className='price-final'>{cartTotal.toFixed(2)} рсд</p>
+              <p className='price-final'>{cartTotal.toFixed(2)} rsd</p>
             </td>
           </tr>
         </tbody>
       </table>
       <Link to='/checkout'>
-        <button className='checkout-btn'>Наставите са плаћањем →</button>
+        <button className='checkout-btn'>Nastavite sa plaćanjem →</button>
       </Link>
     </CartSummaryWrapper>
   );

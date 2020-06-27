@@ -108,15 +108,15 @@ const Shirts = () => {
 
   return (
     <ShirtsWrapper>
-      <Title title='Мајице' />
+      <Title title='Majice' />
 
       <div className='container-products'>
         <div className='products-sort'>
           <select>
-            <option value=''>Подразумевано сортирање</option>
-            <option value='new'>Најновије</option>
-            <option value='price_asc'>По цени - растуће</option>
-            <option value='price_desc'>По цени - опадајуће</option>
+            <option value=''>Podrazumevano sortitanje</option>
+            <option value='new'>Najnovije</option>
+            <option value='price_asc'>Po ceni - rastuće</option>
+            <option value='price_desc'>Po ceni - opadajuće</option>
           </select>
         </div>
         <div className='content'>

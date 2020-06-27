@@ -9,7 +9,7 @@ const AboutWrapper = styled.main`
 
 const About = () => (
   <AboutWrapper>
-    <Title title='О нама' />
+    <Title title='O nama' />
   </AboutWrapper>
 );
 

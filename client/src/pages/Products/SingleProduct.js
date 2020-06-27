@@ -266,7 +266,7 @@ const SingleProduct = (props) => {
         <Message
           visible={messageVisible}
           msgStyle='success'
-          text='Производ успешно додат у корпу'
+          text='Proizvod uspešno dodat u korpu'
           cart
         />
         <div className='product-wrapper'>
@@ -301,18 +301,18 @@ const SingleProduct = (props) => {
           <div className='product-info'>
             <h1>{product.name}</h1>
             <p className='product-price'>
-              {product.price && product.price.toFixed(2)} рсд
+              {product.price && product.price.toFixed(2)} rsd
             </p>
             <p className='product-description'>{product.description}</p>
             <div className='product-actions'>
               <div className='sizes'>
-                <p>Величине</p>
+                <p>Veličine</p>
                 <div className='size-select'>
                   <select
                     value={size}
                     onChange={(e) => setSize(e.target.value)}
                   >
-                    <option value=''>Изаберите опцију</option>
+                    <option value=''>Izaberite opciju</option>
                     {product.sizes &&
                       product.sizes.map((size, i) => (
                         <option key={i} value={size}>
@@ -334,7 +334,7 @@ const SingleProduct = (props) => {
                   disabled={!size}
                   onClick={() => handleClick(product, size, qty)}
                 >
-                  Додај у корпу
+                  Dodaj u korpu
                 </Button>
               </div>
             </div>

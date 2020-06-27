@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Majica from '../images/shirt.webp';
-import Duks from '../images/duks.webp';
-import Kapa from '../images/kapa.webp';
-import Trenerka from '../images/trenerka.webp';
+import Majica from '../images/tshirt-sketch.png';
+import Polo from '../images/polo-sketch.jpg';
+import Kacket from '../images/cap-sketch.jpg';
+import Duks from '../images/hoodie-sketch.jpg';
 
 const ShopWrapper = styled.main`
   min-height: 80vh;
@@ -15,29 +15,31 @@ const ShopWrapper = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  .categories a {
-    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
   }
 
   .category {
     width: 225px;
     height: 225px;
     cursor: pointer;
-  }
 
-  .category img {
-    height: 100%;
-    width: 100%;
-  }
+    img {
+      height: 100%;
+      width: 100%;
+    }
 
-  .category p {
-    text-align: center;
-  }
+    p {
+      margin-top: 1rem;
+      text-align: center;
+      border-bottom: 1px solid black;
 
-  .category p span {
-    color: #555;
+      span {
+        color: #333;
+      }
+    }
   }
 `;
 
@@ -50,26 +52,26 @@ const Shop = () => {
             <div className='category'>
               <img src={Majica} alt='shirts' />
               <p>
-                <span>Мајице</span>
+                <span>Majice</span>
               </p>
             </div>
           </Link>
           <div className='category'>
-            <img src={Duks} alt='sweetshirts' />
+            <img src={Polo} alt='polo-shirts' />
             <p>
-              <span>Дуксеви</span>
+              <span>Polo majice</span>
             </p>
           </div>
           <div className='category'>
-            <img src={Kapa} alt='caps' />
+            <img src={Kacket} alt='caps' />
             <p>
-              <span>Капе</span>
+              <span>Kačketi</span>
             </p>
           </div>
           <div className='category'>
-            <img src={Trenerka} alt='tracksuits' />
+            <img src={Duks} alt='hoodies' />
             <p>
-              <span>Тренерке</span>
+              <span>Duksevi (uskoro)</span>
             </p>
           </div>
         </div>

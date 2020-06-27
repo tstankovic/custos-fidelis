@@ -1,23 +1,17 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import HeroImg from '../images/hero-main.jpg';
+import HeroMain from '../images/hero-main.jpg';
 import HeroNew from '../images/hero-new.jpg';
-import CrniDuksImg from '../images/crni-duks-sunce.jpg';
-import ModelLogoImg from '../images/Model-logo-1.jpg';
-import FbIcon from '../images/fb-icon.png';
-import InstaIcon from '../images/insta-icon.png';
-import YtIcon from '../images/yt-icon.png';
-import FbIconDark from '../images/fb-icon-dark.png';
-import InstaIconDark from '../images/insta-icon-dark.png';
-import YtIconDark from '../images/yt-icon-dark.png';
+import HeroToggleFirst from '../images/hero-toggle-1.jpg';
+import HeroToggleSecond from '../images/hero-toggle-2.jpg';
 
 import ImageSlider from '../components/Global/ImageSlider';
 
 const HomeWrapper = styled.main`
   .hero {
     min-height: 100vh;
-    background-image: url(${HeroImg});
+    background-image: url(${HeroMain});
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,7 +55,6 @@ const HomeWrapper = styled.main`
 
   .hero-slider {
     min-height: 100vh;
-    background-color: lightsalmon;
     position: relative;
   }
 
@@ -146,7 +139,7 @@ const Home = () => {
     <HomeWrapper>
       <section className='hero'>
         <div>
-          <button className='shop-btn'>КУПИ</button>
+          <button className='shop-btn'>KUPI</button>
         </div>
       </section>
       <section>
@@ -159,50 +152,20 @@ const Home = () => {
       <section className='hero-slider'>
         <div
           className='hero-slider-img active'
-          style={{ backgroundImage: `url(${CrniDuksImg})` }}
+          style={{ backgroundImage: `url(${HeroToggleFirst})` }}
         >
           <div className='hero-slider-img-content'>
-            <h1>ПРИНЦИП ДУКС</h1>
-            <button>ПРОДАВНИЦА</button>
+            <h1>NOVE MAJICE</h1>
+            <button>PRODAVNICA</button>
           </div>
         </div>
         <div
           className='hero-slider-img'
-          style={{ backgroundImage: `url(${ModelLogoImg})` }}
+          style={{ backgroundImage: `url(${HeroToggleSecond})` }}
         >
           <div className='hero-slider-img-content'>
-            <h1>ПРИНЦИП ДУКС</h1>
-            <button>ПРОДАВНИЦА</button>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className='container'>
-          <div className='icons-wrapper'>
-            <a
-              href='https://facebook.com'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={FbIcon} alt='facebook' className='img-main' />
-              <img src={FbIconDark} alt='facebook' className='img-dark' />
-            </a>
-            <a
-              href='https://instagram.com'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={InstaIcon} alt='instagram' className='img-main' />
-              <img src={InstaIconDark} alt='instagram' className='img-dark' />
-            </a>
-            <a
-              href='https://youtube.com'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img src={YtIcon} alt='youtube' className='img-main' />
-              <img src={YtIconDark} alt='youtube' className='img-dark' />
-            </a>
+            <h1>NOVI DUKSEVI</h1>
+            <button>PRODAVNICA</button>
           </div>
         </div>
       </section>

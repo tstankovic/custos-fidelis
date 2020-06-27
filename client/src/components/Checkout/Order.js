@@ -129,12 +129,12 @@ const Order = ({ cart, handleOrder }) => {
 
   return (
     <OrderWrapper>
-      <h2>Ваша наруџбина</h2>
+      <h2>Vaša narudžbina</h2>
       <table className='order-details'>
         <tbody>
           <tr>
-            <th>Производ</th>
-            <th>Укупно</th>
+            <th>Proizvod</th>
+            <th>Ukupno</th>
           </tr>
           {cart.map((item, i) => (
             <tr key={i}>
@@ -144,16 +144,16 @@ const Order = ({ cart, handleOrder }) => {
                 </p>
                 <p className='qty'>x {item.qty}</p>
               </td>
-              <td>{item.product.price.toFixed(2)} рсд</td>
+              <td>{item.product.price.toFixed(2)} rsd</td>
             </tr>
           ))}
           <tr>
-            <th>Укупно</th>
-            <td>{cartTotal.toFixed(2)} рсд</td>
+            <th>Ukupno</th>
+            <td>{cartTotal.toFixed(2)} rsd</td>
           </tr>
           <tr>
-            <th>Укупно</th>
-            <td className='total-price'>{cartTotal.toFixed(2)} рсд</td>
+            <th>Ukupno</th>
+            <td className='total-price'>{cartTotal.toFixed(2)} rsd</td>
           </tr>
         </tbody>
       </table>
@@ -184,7 +184,7 @@ const Order = ({ cart, handleOrder }) => {
         <div style={{ display: loading ? 'block' : 'none' }}>
           <FaSpinner />
         </div>
-        <span style={{ display: loading ? 'none' : 'block' }}>Наручите</span>
+        <span style={{ display: loading ? 'none' : 'block' }}>Naručite</span>
       </button>
     </OrderWrapper>
   );

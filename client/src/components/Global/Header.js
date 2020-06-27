@@ -19,19 +19,22 @@ const HeaderWrapper = styled.header`
 
   .logo {
     padding: 2rem 0;
+    font-family: 'Yellowtail', cursive;
   }
 
   nav ul {
     list-style: none;
-    width: 400px;
     display: flex;
-    justify-content: space-between;
+  }
+
+  nav ul li {
+    padding-right: 3rem;
   }
 
   nav ul li a {
+    font-family: 'Titillium Web', sans-serif;
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 1.5rem 0;
@@ -40,15 +43,15 @@ const HeaderWrapper = styled.header`
   .search {
     display: flex;
     align-items: center;
-  }
 
-  .search input {
-    width: 250px;
-    height: 50px;
-    padding: 0.5rem;
-    background-color: #fafafa;
-    border: none;
-    outline: none;
+    input {
+      width: 250px;
+      height: 50px;
+      padding: 0.5rem;
+      background-color: #fafafa;
+      border: none;
+      outline: none;
+    }
   }
 
   .cart {
@@ -91,7 +94,7 @@ const Header = () => {
     <HeaderWrapper>
       <div className='container'>
         <div className='row'>
-          <h1 className='logo'>LOGO</h1>
+          <h1 className='logo'>Custos Fidelis</h1>
           <div className='search'>
             <input type='text' placeholder='Претрага производа...' />
           </div>
@@ -100,16 +103,13 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <Link to='/'>Насловна</Link>
+                <Link to='/'>Naslovna</Link>
               </li>
               <li>
-                <Link to='/shop'>Продавница</Link>
+                <Link to='/shop'>Prodavnica</Link>
               </li>
               <li>
-                <Link to='/story'>Прича</Link>
-              </li>
-              <li>
-                <Link to='/about'>О нама</Link>
+                <Link to='/story'>Priča</Link>
               </li>
             </ul>
           </nav>

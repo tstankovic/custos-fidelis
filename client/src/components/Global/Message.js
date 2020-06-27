@@ -32,7 +32,7 @@ const MessageWrapper = styled.div`
 const Message = ({ visible, msgStyle, text, cart }) => (
   <MessageWrapper visible={visible} msgStyle={msgStyle} cart={cart}>
     <p>{text}</p>
-    {cart && <Link to='/cart'>Преглед корпе →</Link>}
+    {cart && <Link to='/cart'>Pregled korpe →</Link>}
   </MessageWrapper>
 );
 

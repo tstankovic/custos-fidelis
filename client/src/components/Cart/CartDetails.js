@@ -35,10 +35,10 @@ const CartDetails = ({ cartTotal, itemsTotal }) => (
   <CartDetailsWrapper>
     <Link to='/cart' className='cart'>
       <p>
-        <span className='total-price'>{cartTotal.toFixed(2)} рсд</span>
+        <span className='total-price'>{cartTotal.toFixed(2)} rsd</span>
         <span className='total-products'>
-          {itemsTotal} производ
-          {itemsTotal === 0 || itemsTotal > 1 ? 'а' : ''}
+          {itemsTotal} proizvod
+          {itemsTotal === 0 || itemsTotal > 1 ? 'a' : ''}
         </span>
       </p>
       <div className='image-wrapper'>

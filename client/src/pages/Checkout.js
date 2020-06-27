@@ -78,7 +78,7 @@ const CheckoutWrapper = styled.main`
   }
 
   .required label::after {
-    content: '*';
+    content: ' *';
     color: red;
   }
 
@@ -199,22 +199,22 @@ const Checkout = () => {
             <div className='messages'>
               <Message
                 visible
-                text='Поруџбина успешно прослеђена. Контактираћемо вас путем смс-а ради потврде. Хвала на поверењу!'
+                text='Porudžbina uspešno prosledjena. Kontaktiraćemo Vas putem SMS-a radi potvrde. Hvala na poverenju!'
                 msgStyle='success'
               />
-              <Message visible text='Ваша корпа је испражњена' />
+              <Message visible text='Vaša korpa je ispražnjena.' />
             </div>
             <Link to='/'>
-              <button className='btn'>Назад на почетну ⏎</button>
+              <button className='btn'>Nazad na početnu ⏎</button>
             </Link>
           </>
         ) : (
           <div className='row'>
             <div className='order-details'>
-              <h2>Детаљи за наплату</h2>
+              <h2>Detalji za naplatu</h2>
               <div className='input-group name'>
                 <div className='input-field required'>
-                  <label htmlFor='firstName'>Име</label>
+                  <label htmlFor='firstName'>Ime</label>
                   <input
                     type='text'
                     id='firstName'
@@ -229,7 +229,7 @@ const Checkout = () => {
                   />
                 </div>
                 <div className='input-field required'>
-                  <label htmlFor='lastName'>Презиме</label>
+                  <label htmlFor='lastName'>Prezime</label>
                   <input
                     type='text'
                     id='lastName'
@@ -246,7 +246,7 @@ const Checkout = () => {
               </div>
               <div className='input-group'>
                 <div className='input-field'>
-                  <label htmlFor='company'>Назив компаније (опционо)</label>
+                  <label htmlFor='company'>Naziv kompanije (opciono)</label>
                   <input
                     type='text'
                     id='company'
@@ -257,7 +257,7 @@ const Checkout = () => {
               </div>
               <div className='input-group required'>
                 <div className='input-field'>
-                  <label htmlFor='address'>Улица и кућни број</label>
+                  <label htmlFor='address'>Ulica i kućni broj</label>
                   <input
                     type='text'
                     id='address'
@@ -274,7 +274,7 @@ const Checkout = () => {
               </div>
               <div className='input-group required'>
                 <div className='input-field'>
-                  <label htmlFor='city'>Град</label>
+                  <label htmlFor='city'>Grad</label>
                   <input
                     type='text'
                     id='city'
@@ -291,7 +291,7 @@ const Checkout = () => {
               </div>
               <div className='input-group required'>
                 <div className='input-field'>
-                  <label htmlFor='zipCode'>Поштански број</label>
+                  <label htmlFor='zipCode'>Poštanski broj</label>
                   <input
                     type='text'
                     id='zipCode'
@@ -308,7 +308,7 @@ const Checkout = () => {
               </div>
               <div className='input-group required'>
                 <div className='input-field'>
-                  <label htmlFor='phoneNumber'>Телефон </label>
+                  <label htmlFor='phoneNumber'>Telefon</label>
                   <input
                     type='text'
                     id='phoneNumber'
@@ -325,7 +325,7 @@ const Checkout = () => {
               </div>
               <div className='input-group required'>
                 <div className='input-field'>
-                  <label htmlFor='email'>Адреса е-поште</label>
+                  <label htmlFor='email'>Adresa e-pošte</label>
                   <input
                     type='email'
                     id='email'
@@ -340,10 +340,10 @@ const Checkout = () => {
                   />
                 </div>
               </div>
-              <h2 className='notes-title'>Додатне информације</h2>
+              <h2 className='notes-title'>Dodatne informacije</h2>
               <div className='input-group ta'>
                 <div className='input-field'>
-                  <label htmlFor='notes'>Напомене о наруџбини (опционо)</label>
+                  <label htmlFor='notes'>Napomene o porudžbini (opciono)</label>
                   <textarea
                     rows='5'
                     id='notes'

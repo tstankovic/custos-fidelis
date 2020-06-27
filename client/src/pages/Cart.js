@@ -41,7 +41,7 @@ const Cart = () => {
 
   return (
     <CartWrapper>
-      <Title title='Корпа' />
+      <Title title='Korpa' />
       <div className='container'>
         {cart.length ? (
           <>
@@ -55,9 +55,9 @@ const Cart = () => {
           </>
         ) : (
           <div className='cart-empty'>
-            <h2>Ваша корпа је тренутно празна</h2>
+            <h2>Vaša korpa je trenutno prazna</h2>
             <Link to='/shop'>
-              <button>Назад у продавницу</button>
+              <button>Nazad u prodavnicu</button>
             </Link>
           </div>
         )}

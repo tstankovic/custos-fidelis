@@ -113,7 +113,7 @@ const CartPreview = ({ cart, cartTotal, remove }) => (
                 </Link>
               </p>
               <p>
-                {item.qty} x {item.product.price.toFixed(2)} рсд
+                {item.qty} x {item.product.price.toFixed(2)} rsd
               </p>
             </div>
             <div className='cart-item-image'>
@@ -128,20 +128,20 @@ const CartPreview = ({ cart, cartTotal, remove }) => (
         ))}
 
         <p className='cart-total'>
-          <span>Укупно:</span> {cartTotal.toFixed(2)} рсд
+          <span>Ukupno:</span> {cartTotal.toFixed(2)} rsd
         </p>
 
         <div className='cart-actions'>
           <Link to='/cart'>
-            <button className='cart-preview-btn'>Преглед корпе →</button>
+            <button className='cart-preview-btn'>Pregled korpe →</button>
           </Link>
           <Link to='/checkout'>
-            <button className='checkout-btn'>Плаћање →</button>
+            <button className='checkout-btn'>Plaćanje →</button>
           </Link>
         </div>
       </>
     ) : (
-      <p className='cart-empty'>Нема производа у корпи</p>
+      <p className='cart-empty'>Nema proizvoda u korpi</p>
     )}
   </CartPreviewWrapper>
 );

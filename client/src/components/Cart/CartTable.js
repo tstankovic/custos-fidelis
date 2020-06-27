@@ -89,11 +89,11 @@ const CartTable = ({ cart, increment, decrement, remove }) => (
       <thead>
         <tr>
           <th></th>
-          <th>Производ</th>
-          <th>Назив</th>
-          <th>Цена</th>
-          <th>Количина</th>
-          <th>Укупно</th>
+          <th>Proizvod</th>
+          <th>Naziv</th>
+          <th>Cena</th>
+          <th>Količina</th>
+          <th>Ukupno</th>
         </tr>
       </thead>
       <tbody>
@@ -115,7 +115,7 @@ const CartTable = ({ cart, increment, decrement, remove }) => (
             <td>
               {item.product.name} - {item.size}
             </td>
-            <td>{item.product.price.toFixed(2)} рсд</td>
+            <td>{item.product.price.toFixed(2)} rsd</td>
             <td>
               <div className='quantity'>
                 <div>
@@ -131,7 +131,7 @@ const CartTable = ({ cart, increment, decrement, remove }) => (
                 </div>
               </div>
             </td>
-            <td>{(item.qty * item.product.price).toFixed(2)} рсд</td>
+            <td>{(item.qty * item.product.price).toFixed(2)} rsd</td>
           </tr>
         ))}
       </tbody>
