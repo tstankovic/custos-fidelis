@@ -7,7 +7,7 @@ import Button from '../../components/Global/Button';
 import Message from '../../components/Global/Message';
 
 const SingleProductWrapper = styled.main`
-  min-height: 120vh;
+  min-height: 100vh;
 
   .product-wrapper {
     padding: 5rem 0;
